@@ -74,7 +74,7 @@ The notebook covers the following steps:
    - Prepare the Zotero library ID, Zotero API key, and target collection name or collection key.
 
 3. **Configure API Keys**
-   - Open `Code_for_publish.ipynb`.
+   - Open `script_extraction.ipynb`.
    - Fill in the required configuration fields, including:
      - Zotero user ID or group library ID
      - Zotero API key
