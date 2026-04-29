@@ -86,3 +86,8 @@ The notebook covers the following steps:
    - Open the notebook in Jupyter Notebook or JupyterLab.
    - Execute the cells sequentially from top to bottom.
    - Check intermediate outputs to confirm that Zotero access, PDF retrieval, and LLM extraction are working correctly.
+
+## Citation
+
+The code in this repository is based on the following paper:
+> **Preparing...**
