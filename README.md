@@ -106,14 +106,20 @@ The notebook saves batch-level and merged outputs under an automatically generat
 ```
 
 **Main outputs include:**
-- extracted material records
-- extracted physicochemical records
-- extracted toxicological records
-- PChem and Tox claim tables with source provenance
-- event logs for API calls, errors, source pages, captions, and image inputs
-- runtime and timing logs
-- manifest files for reruns
-- merged Excel output files for downstream review and analysis
+- **Extracted material records**: `pdf_key`, `article_title`, `doi`, `material_name`, `material_composition`, `material_type`, `exposure_medium`, `source_page`, and `evidence_text`.
+- **Extracted physicochemical records**: `material_name`, `property_name`, `property_value`, `property_unit`, `measurement_method`, `source_type`, `source_page`, `source_caption`, `raw_source_expression`, and `evidence_text`.
+- **Extracted toxicological records**: `material_name`, `assay_type`, `cell_line`, `cell_species`, `cell_organ`, `cell_type`, `exposure_time`, `exposure_dose`, `assay_result`, `endpoint_type`, `source_page`, `source_caption`, `panel_label`, `x_axis_title`, `y_axis_title`, and `is_synthetic_zero_dose_control`.
+- **PChem and Tox claim tables**: `candidate_id`, `claim_type`, `extracted_value`, `unit`, `source_type`, `source_page`, `source_caption`, `evidence_text`, and `decision_status`.
+- **Event logs**: `batch_id`, `pdf_key`, `stage`, `status`, `error_type`, `api_call_name`, `payload_size`, `source_page`, `caption_length`, `number_of_images`, and `elapsed_time`.
+- **Runtime and timing logs**: batch-level and stage-level runtime information.
+- **Manifest files for reruns**: `batch_id`, `paper_index`, `zotero_item_key`, `zotero_attachment_key`, `article_title`, `doi`, `local_pdf_path`, and `output_folder`.
+- **Merged Excel output files**: integrated Mat, PChem, Tox, claim, log, and manifest tables for downstream review and analysis.
+
+**Example record:**
+
+| pdf_key | title | material | material_name | composition | media | core_size | core_size_unit | core_size_measurement_method | core_size_source | hydrodynamic_size | hydrodynamic_size_unit | hydrodynamic_size_measurement_method | hydrodynamic_size_source | surface_charge | surface_charge_unit | surface_charge_measurement_method | surface_charge_source | surface_area | surface_area_unit | surface_area_measurement_method | surface_area_source | cell_assay | cell_name | cell_species | cell_origin | cell_type | exposure_time | exposure_time_unit | exposure_dose | exposure_dose_unit | assay_results | x_title | y_title | endpoint_type | value_origin | evidence_text | cell_assay_raw | source_row_id | source_page | source_type | source_caption | panel_label | exposure_time_num | exposure_dose_num | assay_results_num | is_synthetic_control |
+|---|---|---|---|---|---|---:|---|---|---|---:|---|---|---|---:|---|---|---|---:|---|---|---|---|---|---|---|---|---:|---|---:|---|---:|---|---|---|---|---|---|---:|---:|---|---|---|---:|---:|---:|---:|
+| PDF001 | Example study on oxide nanoparticle cytotoxicity | ZnO NP [DMEM] | ZnO NP | ZnO | DMEM | 25.0 | nm | TEM | Experiment | 120.0 | nm | DLS | Experiment | -18.5 | mV | Zeta potential | Experiment | 45.2 | m2/g | BET | Manufacturer | MTT | A549 | human | Lung | Cancer | 24 | h | 50 | µg/mL | 68.4 | Concentration (µg/mL) | Cell viability (%) | viability | figure | Example evidence text indicating that A549 cells were exposed to ZnO nanoparticles for 24 h and that the viability at 50 µg/mL was approximately 68%. | MTT assay | 1 | 5 | mixed | Example caption describing dose-dependent cytotoxicity of ZnO nanoparticles in A549 cells. | Fig. 2A | 24 | 50 | 68.4 | 0 |
 
 ## Citation
 
