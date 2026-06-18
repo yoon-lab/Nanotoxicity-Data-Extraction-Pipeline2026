@@ -24,6 +24,7 @@ The pipeline is designed to support research on nanomaterial toxicity by extract
 - **Structured Output Generation**
   - Converts extracted information into structured tabular outputs.
   - Supports downstream review, cleaning, and analysis of extracted nanotoxicity data.
+  - Saves extracted records, source-provenance information, event logs, runtime logs, and merged output files for traceability and reruns.
 
 ## File Structure
 
@@ -64,9 +65,11 @@ The notebook covers the following steps:
 ## How to Run
 
 1. **Environment Setup**
-   - Install Python 3.7 or higher.
+   - Install Python 3.10 or higher.
    - Install Jupyter Notebook or JupyterLab.
    - Install the required Python packages used in the notebook.
+   - Recommended installation command: pip install jupyter pandas numpy openpyxl pyzotero openai PyMuPDF pytz pdf2image Pillow opencv-python layoutparser torch torchvision
+   - The figure/table detection step uses LayoutParser with a PubLayNet Mask R-CNN model.
 
 2. **Prepare the Zotero Library**
    - Create or select a Zotero collection containing the target scientific articles.
@@ -81,11 +84,35 @@ The notebook covers the following steps:
      - OpenAI API key
      - Target Zotero collection
      - Project name or output folder name
+   - Required user configuration fields include:
+     - selected_collection: exact Zotero collection name to process
+     - project_name: short project label used in output folders
+     - ZOTERO_USER_ID: Zotero user ID or group library ID
+     - ZOTERO_API: Zotero API key with access to the target library and PDF attachments
+     - OPENAI_API_KEY: OpenAI API key for LLM calls
+     - CHAT_MODEL_NAME: LLM model ID
+     - CHAT_TEMPERATURE: LLM temperature setting 
 
 4. **Run the Notebook**
    - Open the notebook in Jupyter Notebook or JupyterLab.
    - Execute the cells sequentially from top to bottom.
    - Check intermediate outputs to confirm that Zotero access, PDF retrieval, and LLM extraction are working correctly.
+
+## Outputs
+
+The notebook saves batch-level and merged outputs under an automatically generated output folder:
+
+../output/<selected_collection>_<project_name>_<timestamp>/
+
+**Main outputs include:**
+- extracted material records
+- extracted physicochemical records
+- extracted toxicological records
+- PChem and Tox claim tables with source provenance
+- event logs for API calls, errors, source pages, captions, and image inputs
+- runtime and timing logs
+- manifest files for reruns
+- merged Excel output files for downstream review and analysis
 
 ## Citation
 
