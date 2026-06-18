@@ -101,8 +101,9 @@ The notebook covers the following steps:
 ## Outputs
 
 The notebook saves batch-level and merged outputs under an automatically generated output folder:
-
-../output/<selected_collection>_<project_name>_<timestamp>/
+```text
+../output/<selected_collection><project_name><timestamp>/
+```
 
 **Main outputs include:**
 - extracted material records
@@ -117,4 +118,4 @@ The notebook saves batch-level and merged outputs under an automatically generat
 ## Citation
 
 The code in this repository is based on the following paper:
-> **Preparing...**
+> **Preparing**
