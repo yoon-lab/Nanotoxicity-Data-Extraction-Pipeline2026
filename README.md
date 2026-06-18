@@ -29,7 +29,7 @@ The pipeline is designed to support research on nanomaterial toxicity by extract
 
 This repository contains the main Jupyter Notebook for the nanotoxicity data extraction pipeline.
 
-- **Code_for_publish.ipynb**  
+- **script_extraction.ipynb**  
   Implements the complete workflow for extracting nanotoxicity-related data from Zotero-hosted scientific PDFs using an LLM-assisted pipeline.
 
 The notebook covers the following steps:
